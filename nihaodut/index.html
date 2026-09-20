@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="你好毒txt小说在线阅读平台，提供经典武侠小说《你好毒》全文免费阅读，支持手机端与电脑端访问，收录小说章节目录、人物介绍及阅读指南。">
+    <meta name="keywords" content="你好毒txt,你好毒小说,你好毒全文,你好毒在线阅读,武侠小说">
+    <title>你好毒txt-经典武侠小说在线阅读与全文下载指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --secondary-color: #c0392b;
+            --bg-color: #fdfbf7;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #e0dcd3;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f0 0%, #fdfbf7 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(139, 0, 0, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Book Intro */
+        .book-intro {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+        }
+
+        .book-cover {
+            float: left;
+            width: 160px;
+            height: 220px;
+            background-color: #ddd;
+            margin-right: 25px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .book-meta {
+            color: var(--light-text);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .book-meta span {
+            margin-right: 15px;
+        }
+
+        .book-desc {
+            margin-top: 15px;
+            text-align: justify;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .action-buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            background: #fff;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Chapter List */
+        .chapter-list-section {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chapter-list {
+            font-size: 14px;
+        }
+
+        .chapter-item {
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-link {
+            color: #555;
+            display: block;
+        }
+
+        .chapter-link:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .chapter-date {
+            font-size: 12px;
+            color: #999;
+            float: right;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .rank-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background: #eee;
+            border-radius: 50%;
+            font-size: 12px;
+            margin-right: 8px;
+        }
+
+        .rank-num.top1 { background: #ff4d4f; color: #fff; }
+        .rank-num.top2 { background: #ff7a45; color: #fff; }
+        .rank-num.top3 { background: #ffc53d; color: #fff; }
+
+        /* Footer */
+        footer {
+            background: #fff;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: 50px;
+            text-align: center;
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .book-cover {
+                float: none;
+                width: 120px;
+                height: 160px;
+                margin: 0 auto 15px;
+            }
+
+            .book-desc {
+                text-align: left;
+            }
+
+            .action-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>TXT</span> 阅文阁
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">武侠</a></li>
+                    <li><a href="#">玄幻</a></li>
+                    <li><a href="#">历史</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">搜索小说</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>你好毒txt</h1>
+            <p>经典武侠小说在线阅读，尽在阅文阁。提供高清排版、快速加载，随时随地畅读精彩内容。</p>
+            <div class="hero-tags">
+                <span class="tag">武侠</span>
+                <span class="tag">经典</span>
+                <span class="tag">免费阅读</span>
+                <span class="tag">TXT下载</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <!-- 左侧主要内容区 -->
+        <div class="content-area">
+            <!-- 小说详情与介绍 -->
+            <article class="book-intro">
+                <div class="book-cover">
+                    <img src="https://picsum.photos/seed/martialarts/160/220" alt="你好毒小说封面">
+                </div>
+                <h2 class="book-title">你好毒</h2>
+                <div class="book-meta">
+                    <span>作者：[武侠名家]</span>
+                    <span>分类：武侠小说</span>
+                    <span>状态：连载中</span>
+                </div>
+                <p class="book-desc">
+                    《你好毒》是一部融合了传统武侠与江湖恩怨的经典作品。故事背景设定在风云变幻的江湖，主角以其独特的性格和精湛的武功，在正邪两道之间周旋。小说通过细腻的笔触描绘了人物内心的挣扎与成长，展现了那个刀光剑影时代的侠骨柔情。书中关于“毒”的运用与破解，更是贯穿全文的线索，扣人心弦。无论是喜欢快意恩仇的读者，还是钟情于人物心理描写的书友，都能在这部作品中找到共鸣。
+                </p>
+                <div class="action-buttons">
+                    <a href="#chapters" class="btn btn-primary">立即阅读</a>
+                    <a href="#" class="btn btn-outline">加入书架</a>
+                    <a href="#" class="btn btn-outline">分享本书</a>
+                </div>
+            </article>
+
+            <!-- 章节列表 -->
+            <section class="chapter-list-section" id="chapters">
+                <div class="section-title">
+                    <h3>最新章节</h3>
+                    <a href="#" style="font-size: 12px; color: var(--primary-color);">查看全部 &raquo;</a>
+                </div>
+                <ul class="chapter-list">
+                    <li class="chapter-item">
+                        <a href="#" class="chapter-link">第 两千五百章 毒火燎原 <span class="chapter-date">10-24</span></a>
+                    </li>
+                    <li class="chapter-item">
+                        <a href="#" class="chapter-link">第 两千四百九十九章 惊天逆转 <span class="chapter-date">10-23</span></a>
+                    </li>
+                    <li class="chapter-item">
+                        <a href="#" class="chapter-link">第 两千四百九十八章 绝境逢生 <span class="chapter-date">10-22</span></a>
+                    </li>
+                    <li class="chapter-item">
+                        <a href="#" class="chapter-link">第 两千四百九十七章 最后的赌注 <span class="chapter-date">10-21</span></a>
+                    </li>
+                    <li class="chapter-item">
+                        <a href="#" class="chapter-link">第 两千四百九十六章 疯狂的杀戮 <span class="chapter-date">10-20</span></a>
+                    </li>
+                    <li class="chapter-item">
+                        <a href="#" class="chapter-link">第 两千四百九十五章 隐秘的盟约 <span class="chapter-date">10-19</span></a>
+                    </li>
+                    <li class="chapter-item">
+                        <a href="#" class="chapter-link">第 两千四百九十四章 暗流涌动 <span class="chapter-date">10-18</span></a>
+                    </li>
+                    <li class="chapter-item">
+                        <a href="#" class="chapter-link">第 两千四百九十三章 毒手再出 <span class="chapter-date">10-17</span></a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 阅读指南/注意事项 -->
+            <section class="chapter-list-section" style="margin-top: 30px;">
+                <div class="section-title">
+                    <h3>阅读指南</h3>
+                </div>
+                <div style="font-size: 14px; color: #555;">
+                    <p style="margin-bottom: 10px;"><strong>1. 章节导航：</strong> 请点击上方章节列表中的标题进入阅读页面。支持“上一章”与“下一章”快速切换。</p>
+                    <p style="margin-bottom: 10px;"><strong>2. 字体设置：</strong> 阅读页面提供字号调整功能，建议在手机端阅读时选择适中字号以保护视力。</p>
+                    <p style="margin-bottom: 10px;"><strong>3. 留存收藏：</strong> 如喜欢《你好毒》，请点击“加入书架”功能，方便下次快速找回阅读进度。</p>
+                    <p><strong>4. 版权声明：</strong> 本站提供TXT格式小说在线展示，仅供个人学习交流使用，请勿用于商业用途。如有版权问题，请联系我们删除。</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- 右侧侧边栏 -->
+        <aside class="sidebar">
+            <!-- 热门排行 -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">热门榜单</h3>
+                <ul class="rank-list">
+                    <li>
+                        <span><span class="rank-num top1">1</span>你好毒</span>
+                        <span>98.2万</span>
+                    </li>
+                    <li>
+                        <span><span class="rank-num top2">2</span>绝世神医</span>
+                        <span>95.6万</span>
+                    </li>
+                    <li>
+                        <span><span class="rank-num top3">3</span>逆天邪神</span>
+                        <span>89.1万</span>
+                    </li>
+                    <li>
+                        <span><span class="rank-num">4</span>完美世界</span>
+                        <span>85.4万</span>
+                    </li>
+                    <li>
+                        <span><span class="rank-num">5</span>斗破苍穹</span>
+                        <span>82.7万</span>
+                    </li>
+                    <li>
+                        <span><span class="rank-num">6</span>武动乾坤</span>
+                        <span>78.3万</span>
+                    </li>
+                    <li>
+                        <span><span class="rank-num">7</span>大主宰</span>
+                        <span>75.0万</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 推荐分类 -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">分类推荐</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px;">
+                    <a href="#" style="color: #555; display: block; padding: 5px 0;">玄幻修真</a>
+                    <a href="#" style="color: #555; display: block; padding: 5px 0;">都市言情</a>
+                    <a href="#" style="color: #555; display: block; padding: 5px 0;">历史架空</a>
+                    <a href="#" style="color: #555; display: block; padding: 5px 0;">科幻未来</a>
+                    <a href="#" style="color: #555; display: block; padding: 5px 0;">悬疑推理</a>
+                    <a href="#" style="color: #555; display: block; padding: 5px 0;">武侠仙侠</a>
+                </div>
+            </div>
+
+            <!-- 友情链接 -->
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">相关资源</h3>
+                <ul class="rank-list">
+                    <li><a href="#" class="chapter-link">TXT下载站</a></li>
+                    <li><a href="#" class="chapter-link">电子书论坛</a></li>
+                    <li><a href="#" class="chapter-link">漫画改编版</a></li>
+                    <li><a href="#" class="chapter-link">有声读物</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 阅文阁在线阅读. All Rights Reserved.</p>
+            <p>本站内容均来自互联网，仅供学习与交流，请于下载后24小时内删除。</p>
+            <p>
+                <a href="#">关于我们</a> | 
+                <a href="#">联系方式</a> | 
+                <a href="#">免责声明</a> | 
+                <a href="#">隐私政策</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
