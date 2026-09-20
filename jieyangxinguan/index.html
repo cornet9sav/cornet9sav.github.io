@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揭阳新冠-疫情防控最新政策与便民服务指南</title>
+    <meta name="description" content="揭阳新冠疫情防控专题页面，提供揭阳新冠疫苗接种点查询、核酸检测机构信息、最新疫情防控政策解读及健康码申请指南。">
+    <meta name="keywords" content="揭阳新冠, 揭阳疫情防控, 揭阳新冠疫苗接种, 揭阳核酸检测, 揭阳健康码">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d93025;
+            --primary-hover: #b92b20;
+            --accent-color: #1a73e8;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #202124;
+            --text-secondary: #5f6368;
+            --border-color: #dadce0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #f1f3f4;
+            border-color: #dadce0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            height: var(--header-height);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f6f9fc 0%, #eef2f5 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        /* Status Banner */
+        .status-banner {
+            background-color: #e8f0fe;
+            color: #1967d2;
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Main Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr 280px;
+            gap: 24px;
+            padding: 40px 0;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-color);
+        }
+
+        .quick-links li {
+            margin-bottom: 10px;
+        }
+
+        .quick-links a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .quick-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .news-item {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f1f3f4;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .news-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .news-title {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .info-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #fce8e6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .info-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .info-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-color);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #202124;
+            color: #bdc1c6;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #3c4043;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none; /* Hide sidebars on tablet/mobile for simplicity */
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                揭阳新冠服务
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#policy">防控政策</a></li>
+                    <li><a href="#vaccine">疫苗接种</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="status-banner">
+        <div class="container">
+            当前揭阳新冠疫情防控形势总体平稳，请广大市民继续做好个人防护，保持良好卫生习惯。
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>揭阳新冠疫情防控与便民服务</h1>
+            <p>提供揭阳地区新冠疫苗接种点查询、核酸检测指引、最新防疫政策及健康服务入口，助力市民安心生活。</p>
+            <div class="hero-actions">
+                <a href="#vaccine" class="btn btn-primary">查询接种点</a>
+                <a href="#policy" class="btn btn-outline">查看最新政策</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-grid">
+        <!-- Left Sidebar: Navigation -->
+        <aside>
+            <div class="sidebar-card">
+                <h3>服务导航</h3>
+                <ul class="quick-links">
+                    <li><a href="#">核酸检测机构 <span>→</span></a></li>
+                    <li><a href="#">疫苗接种预约 <span>→</span></a></li>
+                    <li><a href="#">健康码申领 <span>→</span></a></li>
+                    <li><a href="#">返乡政策查询 <span>→</span></a></li>
+                    <li><a href="#">防疫物资指南 <span>→</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>最新动态</h3>
+                <div class="news-list">
+                    <article class="news-item">
+                        <div class="news-date">2023-10-24</div>
+                        <a href="#" class="news-title">揭阳市关于调整新冠病毒感染“乙类乙管”防控措施的通知</a>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">2023-10-22</div>
+                        <a href="#" class="news-title">揭阳市卫健委：加强秋冬季重点人群新冠疫苗接种工作</a>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">2023-10-20</div>
+                        <a href="#" class="news-title">关于优化医疗机构就诊流程的温馨提示</a>
+                    </article>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <section class="content-area">
+            
+            <div id="policy">
+                <h2 class="section-title">最新防控政策解读</h2>
+                <div class="info-grid">
+                    <article class="info-card">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                        </div>
+                        <h4>个人防护措施</h4>
+                        <p>科学佩戴口罩，勤洗手，保持社交距离。在人群密集或通风不良场所建议佩戴口罩，咳嗽或打喷嚏时遮掩口鼻。</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">了解更多详情 →</a>
+                    </article>
+                    <article class="info-card">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                        </div>
+                        <h4>重点人群防护</h4>
+                        <p>老年人、有基础疾病者及免疫功能低下人群，建议完成全程接种及加强免疫，减少重症风险。</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">查看重点人群指南 →</a>
+                    </article>
+                    <article class="info-card">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                        </div>
+                        <h4>健康监测与就医</h4>
+                        <p>出现发热、干咳、乏力等症状时，建议居家休息，必要时可前往发热门诊就诊。保持健康生活方式。</p>
+                        <a href="#" style="color: var(--primary-color); font-size: 0.9rem; font-weight: 500;">就医流程指引 →</a>
+                    </article>
+                </div>
+            </div>
+
+            <div id="vaccine">
+                <h2 class="section-title">疫苗接种服务</h2>
+                <div class="info-card" style="margin-bottom: 24px;">
+                    <h3>接种点查询与预约</h3>
+                    <p style="margin-top: 10px; color: var(--text-secondary);">为方便市民接种，揭阳市已开放多家社区卫生服务中心及定点医院提供新冠疫苗接种服务。请根据居住地就近选择接种点。</p>
+                    <ul style="margin-top: 15px; margin-bottom: 15px; color: var(--text-secondary); list-style-type: disc; padding-left: 20px;">
+                        <li>第一针、第二针、加强针接种</li>
+                        <li>提供60岁以上老年人绿色通道服务</li>
+                        <li>支持手机APP及现场扫码预约</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">立即查询揭阳接种点</a>
+                </div>
+            </div>
+
+            <div id="faq" class="faq-section">
+                <h2 class="section-title">常见问题解答</h2>
+                
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        揭阳地区现在还需要核酸检测吗？
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        根据最新疫情防控政策，跨省流动人员不再查验核酸检测阴性证明和健康码，不再开展落地检。但在医疗机构就诊、养老院、福利院等特定场所，仍需配合查验核酸或抗原结果。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        新冠疫苗接种后有哪些注意事项？
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        接种后请在现场留观30分钟，无不适后方可离开。保持注射部位清洁干燥，避免剧烈运动。接种当天建议清淡饮食，多喝水。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        老年人接种新冠疫苗需要注意什么？
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        老年人在接种前应如实告知医生健康状况。如有发热、急性疾病或慢性病急性发作期，应暂缓接种。建议在家人陪同下前往接种点。
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right Sidebar: Resources -->
+        <aside>
+            <div class="sidebar-card">
+                <h3>官方渠道</h3>
+                <ul class="quick-links">
+                    <li><a href="#">揭阳市人民政府官网</a></li>
+                    <li><a href="#">揭阳发布微信公众号</a></li>
+                    <li><a href="#">健康揭阳公众号</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>防疫物资储备建议</h3>
+                <ul class="quick-links" style="font-size: 0.9rem;">
+                    <li><a href="#">口罩储备指南</a></li>
+                    <li><a href="#">消毒用品使用</a></li>
+                    <li><a href="#">家庭药箱配置</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>关于服务</h5>
+                    <p style="font-size: 0.9rem; color: #9aa0a6;">本页面旨在为揭阳市民提供新冠疫情防控相关的信息查询与便民服务指引，信息来源于公开渠道，仅供参考。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>快速链接</h5>
+                    <ul>
+                        <li><a href="#">疫情实时数据</a></li>
+                        <li><a href="#">疫苗接种点地图</a></li>
+                        <li><a href="#">健康咨询热线</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>联系方式</h5>
+                    <ul>
+                        <li>服务热线：12345</li>
+                        <li>医疗急救：120</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 揭阳新冠服务指南. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentNode;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
