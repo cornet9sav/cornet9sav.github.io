@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="迷茫的解决指南 - 提供关于职业规划、情感困惑、人生方向选择的心理疏导与实用建议，帮助您走出迷茫，找到内心的平静与生活的目标。">
+    <meta name="keywords" content="迷茫的, 人生困惑, 职业迷茫, 心理疏导, 情感建议">
+    <title>迷茫的-走出困惑与人生方向的实用指南</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6c8eb5;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(230, 126, 34, 0.2);
+            z-index: -1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            padding: 5px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 25px;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #d35400;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(74, 111, 165, 0.1);
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            gap: 8px;
+        }
+
+        /* Feature List */
+        .feature-list {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .feature-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgba(74, 111, 165, 0.2);
+            line-height: 1;
+        }
+
+        .feature-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Adjust based on content */
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #95a5a6;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            nav ul {
+                display: none; /* Simple hiding for mobile, ideally a burger menu */
+            }
+
+            .header-container {
+                justify-content: center;
+            }
+
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                <span>迷茫的</span>指南
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#overview" class="active">核心分析</a></li>
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#topics">常见困惑</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">寻求帮助</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>面对<strong class="highlight">迷茫的</strong>时刻，如何找到内心的方向？</h1>
+                <p>人生充满了不确定性。当您感到迷失、焦虑或对未来感到困惑时，这里提供科学的分析框架和实用的行动指南，帮助您理清思绪，重拾掌控感。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="输入您的困惑（例如：职业选择、情感问题、人生目标）...">
+                    <button>搜索指南</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="container">
+            <div class="section-title">
+                <h2>什么是“迷茫的”状态？</h2>
+                <p>理解迷茫的本质是解决它的第一步</p>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>认知模糊</h3>
+                    <p>对自我认知不清，不知道自己擅长什么，喜欢什么，导致在面临选择时无法做出判断。</p>
+                    <a href="#" class="card-link">了解自我评估 &rarr;</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚧</div>
+                    <h3>路径受阻</h3>
+                    <p>想要达成目标，但感觉缺乏资源、能力或机会，感到前方道路被阻断，不知何去何从。</p>
+                    <a href="#" class="card-link">寻找替代路径 &rarr;</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>选择过载</h3>
+                    <p>拥有太多可能性，却无法取舍，担心选错，从而陷入瘫痪状态，无法迈出第一步。</p>
+                    <a href="#" class="card-link">决策模型解析 &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions" class="container">
+            <div class="section-title">
+                <h2>走出迷茫的实用步骤</h2>
+                <p>从被动等待到主动出击的行动指南</p>
+            </div>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-number">01</div>
+                    <div class="feature-content">
+                        <h3>接纳情绪，停止内耗</h3>
+                        <p>感到迷茫是正常的心理防御机制。不要因为感到迷茫而自责。允许自己暂时停顿，将焦虑情绪可视化，而不是在脑海中无限循环。焦虑往往源于对未知的恐惧，而接纳现状是打破恐惧的第一步。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">02</div>
+                    <div class="feature-content">
+                        <h3>回归现实，记录生活</h3>
+                        <p>当思维陷入死循环时，用物理行动来打断它。开始记录每日的“微小成就”或“三件好事”。通过关注当下的具体事务，将注意力从抽象的宏大未来拉回到可控的现在，重建掌控感。</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">03</div>
+                    <div class="feature-content">
+                        <h3>小步试错，低成本行动</h3>
+                        <p>不要试图一次性规划好整个人生。将大目标拆解为可执行的最小单元。尝试不同的爱好，接触不同的圈子。行动是治疗迷茫的唯一良药。即使方向错了，也比原地踏步更有价值。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics Section -->
+        <section id="topics" class="container">
+            <div class="section-title">
+                <h2>热门困惑主题</h2>
+                <p>针对不同场景的深度解析</p>
+            </div>
+            <div class="grid-4">
+                <article class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>职业发展</h3>
+                    <p>工作三年感到瓶颈，是该跳槽还是深耕？如何判断行业趋势？</p>
+                    <a href="#" class="card-link">查看职场指南 &rarr;</a>
+                </article>
+                <article class="card">
+                    <div class="card-icon">❤️</div>
+                    <h3>情感困惑</h3>
+                    <p>单身焦虑与恋爱中的迷失，如何平衡亲密关系与个人成长？</p>
+                    <a href="#" class="card-link">查看情感建议 &rarr;</a>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>学业规划</h3>
+                    <p>考研失败后的出路，选专业还是选城市？如何规划大学四年？</p>
+                    <a href="#" class="card-link">查看学业规划 &rarr;</a>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>人生意义</h3>
+                    <p>如何找到自己真正热爱的事情？意义是寻找出来的还是创造出来的？</p>
+                    <a href="#" class="card-link">查看意义探索 &rarr;</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container faq-container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于迷茫的常见疑问</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        迷茫是一种病吗？
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>迷茫本身不是一种疾病，而是一种心理状态，通常是对现状不满或对未来不确定性的正常反应。它提示我们当前的生活模式或认知模式需要调整。但如果伴随严重的失眠、情绪崩溃或无法正常生活，建议寻求专业心理咨询师的帮助。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        迷茫的时候应该辞职/分手吗？
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>冲动决策往往会让情况更糟。建议先进行“冷静期”分析。列出利弊清单，尝试在当前状态下寻找微小的改变，而不是直接切断所有联系。很多时候，迷茫是因为环境带来的压力过大，改变环境可能只是短暂的缓解，而非根本解决。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        怎么知道自己想要什么？
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>很多人认为“想要什么”是先想出来的，实际上“想要什么”通常是做出来的。通过大量的尝试、阅读和体验，你会在某个瞬间突然发现：“哦，原来这就是我喜欢的。”不要试图在脑海里构建完美的未来，去经历它。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="container" style="text-align: center; padding: 80px 20px;">
+            <div class="card" style="max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, #4a6fa5 0%, #2c3e50 100%); color: white;">
+                <h2 style="margin-bottom: 15px;">开始您的探索之旅</h2>
+                <p style="margin-bottom: 30px; opacity: 0.9;">无论您正处于人生的哪个阶段，改变都从现在开始。加入我们的社区，分享您的困惑，与志同道合的人一起成长。</p>
+                <button class="cta-button" style="background: white; color: var(--primary-color);">加入社区讨论</button>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    <span>迷茫的</span>指南
+                </div>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">致力于为每一个在人生路口徘徊的人提供温暖、科学、实用的指引与陪伴。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#overview">核心分析</a></li>
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#topics">热门主题</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关资源</h4>
+                <ul>
+                    <li><a href="#">心理测试工具</a></li>
+                    <li><a href="#">经典书籍推荐</a></li>
+                    <li><a href="#">专家访谈</a></li>
+                    <li><a href="#">匿名倾诉墙</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 迷茫的指南. 保留所有权利. 本网站内容仅供参考，不构成医疗建议。</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentNode;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
