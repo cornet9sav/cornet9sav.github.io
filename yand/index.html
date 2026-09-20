@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yandex网址入口 - 全球领先的搜索引擎与互联网服务平台</title>
+    <meta name="description" content="Yandex网址入口提供Yandex搜索引擎、地图、翻译、云存储及新闻资讯服务。一键直达俄罗斯及全球互联网核心平台，体验高效、安全的网络访问与信息检索服务。">
+    <meta name="keywords" content="Yandex网址入口, Yandex搜索引擎, Yandex地图, Yandex翻译, Yandex云存储, 俄罗斯搜索引擎, Yandex登录">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #fc3f1d; /* Yandex Orange */
+            --primary-hover: #d62d0e;
+            --secondary-color: #333333;
+            --text-color: #222222;
+            --text-light: #666666;
+            --bg-color: #f4f4f4;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+            fill: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-login {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-login:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Main Hero Section */
+        .hero {
+            background-color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            padding: 8px 8px 8px 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            padding: 12px 0;
+            color: var(--text-color);
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .search-box button:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.05);
+        }
+
+        .search-box button svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Service Grid */
+        .services {
+            padding: 60px 20px;
+            flex: 1;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(252, 63, 29, 0.2);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background-color: #fff0ed;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--primary-color);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+            padding: 60px 20px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .feature-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-color);
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .feature-image {
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 3rem;
+            background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Guide Section */
+        .guide {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .guide-steps {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            background: var(--white);
+            padding: 24px;
+            margin-bottom: 16px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .step-content h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 15px;
+            }
+
+            nav {
+                display: none; /* Simplify for mobile */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-image {
+                height: 250px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 100 100">
+                    <path d="M50 0 C22.4 0 0 22.4 0 50 s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 90C27.9 90 10 72.1 10 50S27.9 10 50 10s40 17.9 40 40-17.9 40-40 40z"/>
+                    <path d="M50 20c-16.5 0-30 13.5-30 30s13.5 30 30 30 30-13.5 30-30-13.5-30-30-30zm0 50c-11 0-20-9-20-20s9-20 20-20 20 9 20 20-9 20-20 20z"/>
+                    <circle cx="50" cy="50" r="15"/>
+                    <path d="M50 35c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z" fill="#fc3f1d"/>
+                </svg>
+                Yandex
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#search">搜索引擎</a></li>
+                    <li><a href="#services">核心服务</a></li>
+                    <li><a href="#guide">使用指南</a></li>
+                    <li><a href="#about">关于Yandex</a></li>
+                </ul>
+            </nav>
+            <a href="https://passport.yandex.com/" target="_blank" class="btn-login">登录</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="search">
+            <div class="hero-container">
+                <h1>全球领先的互联网搜索与服务平台</h1>
+                <p>为您提供精准的俄罗斯及全球信息检索、地图导航、翻译及云存储服务。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索内容..." aria-label="搜索内容">
+                    <button type="button" aria-label="搜索">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="services" id="services">
+            <div class="section-container">
+                <h2 class="section-title">核心服务入口</h2>
+                <div class="service-grid">
+                    <a href="https://yandex.com/" target="_blank" class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                        </div>
+                        <h3>Yandex 搜索</h3>
+                        <p>俄罗斯最大的搜索引擎，提供网页、图片、视频及新闻资讯的精准检索。</p>
+                    </a>
+
+                    <a href="https://yandex.com/maps/" target="_blank" class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+                        </div>
+                        <h3>Yandex 地图</h3>
+                        <p>实时交通状况、街景地图、商家搜索及导航服务，助您精准定位。</p>
+                    </a>
+
+                    <a href="https://translate.yandex.com/" target="_blank" class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+                        </div>
+                        <h3>Yandex 翻译</h3>
+                        <p>支持多语种互译，包括俄语、英语、中文等，提供文档翻译与语音翻译功能。</p>
+                    </a>
+
+                    <a href="https://disk.yandex.com/" target="_blank" class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z"/></svg>
+                        </div>
+                        <h3>Yandex.Disk</h3>
+                        <p>免费云存储服务，支持文件同步、分享及在线预览，数据安全可靠。</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="features-grid">
+                <div class="feature-image">
+                    <!-- Placeholder for visual representation -->
+                    <span style="font-size: 4rem; opacity: 0.5;">🌐</span>
+                </div>
+                <div class="feature-content">
+                    <h2>为什么选择 Yandex？</h2>
+                    <p>Yandex 是俄罗斯互联网市场的领导者，其服务以高精度和本地化著称。无论是查找俄语资料、规划跨国旅行，还是进行文件存储，Yandex 都能提供高效稳定的解决方案。</p>
+                    <ul class="feature-list">
+                        <li>强大的本地化搜索算法，精准匹配俄语及多语言内容。</li>
+                        <li>实时交通数据与精准的地图导航服务。</li>
+                        <li>免费且大容量的云存储空间，支持多设备同步。</li>
+                        <li>安全可靠的身份认证系统。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="guide" id="guide">
+            <div class="section-container">
+                <h2 class="section-title">快速访问指南</h2>
+                <div class="guide-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>访问官方网站</h4>
+                            <p>通过本页面提供的官方链接或直接访问 Yandex 主页，开始您的搜索或服务体验。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>选择所需服务</h4>
+                            <p>根据您的需求选择搜索引擎、地图导航、翻译工具或云存储服务。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>注册与登录（可选）</h4>
+                            <p>为了享受个性化推荐和云存储功能，建议注册 Yandex 账户并登录。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <strong>Yandex</strong>
+                <p style="margin-top: 8px;">俄罗斯互联网巨头，提供全方位的数字服务。</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">隐私政策</a>
+                <a href="#">服务条款</a>
+                <a href="#">帮助中心</a>
+                <a href="#">关于我们</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Yandex. All rights reserved. 本站仅为导航入口，非官方网站。</p>
+        </div>
+    </footer>
+
+</body>
+                          </html>
