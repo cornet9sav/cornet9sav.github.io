@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虐带美女-凄美古风与情感文学阅读平台</title>
+    <meta name="description" content="虐带美女专题站，收录凄美绝伦的古风言情小说、虐恋情深故事及经典影视剧本片段，提供沉浸式阅读体验与情感共鸣。">
+    <meta name="keywords" content="虐带美女,古风虐文,情感文学,凄美故事,言情小说,古言推荐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #5a3e4f;
+            --secondary-color: #8c6b7a;
+            --accent-color: #c58c9b;
+            --bg-color: #fdf6f8;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(90, 62, 79, 0.08);
+            --font-serif: "Songti SC", "SimSun", "Times New Roman", serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: normal;
+            font-family: var(--font-sans);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f0f0f0;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 14px;
+            width: 150px;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f3e5e8 0%, #e1bee7 100%);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.6);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--secondary-color);
+            border: 1px solid rgba(197, 140, 155, 0.3);
+        }
+
+        /* Layout Grid */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Main Content */
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-light);
+            font-family: var(--font-sans);
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-title a:hover {
+            color: var(--accent-color);
+        }
+
+        .card-excerpt {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .card-meta span i {
+            margin-right: 5px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .rank-num {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            color: #ddd;
+            margin-right: 10px;
+            font-weight: bold;
+            min-width: 25px;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { color: #ff4757; }
+        .rank-list li:nth-child(2) .rank-num { color: #ffa502; }
+        .rank-list li:nth-child(3) .rank-num { color: #2ed573; }
+
+        .rank-list a {
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+        }
+
+        .rank-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-cloud a {
+            background: #f5f5f5;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .tag-cloud a:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Grid Section for Collections */
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .grid-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+
+        .grid-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(90, 62, 79, 0.15);
+        }
+
+        .grid-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: #fce4ec;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--accent-color);
+        }
+
+        .grid-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .grid-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .btn-link {
+            color: var(--accent-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #2b1f26;
+            color: #ccc;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #3e2d34;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none;
+            }
+
+            .header-container {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>古韵</span> 虐带美女
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">古风言情</a></li>
+                    <li><a href="#">虐恋情深</a></li>
+                    <li><a href="#">影视剧本</a></li>
+                    <li><a href="#">书单推荐</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索虐文故事...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>品味极致的凄美与爱恨</h1>
+            <p>在文字的迷宫中寻找心灵的共鸣。汇聚经典古风、现代虐恋与影视名场面，为您呈现最动人的“虐带美女”故事。</p>
+            <div class="hero-tags">
+                <span class="tag">💔 心碎文学</span>
+                <span class="tag">🎎 古风虐恋</span>
+                <span class="tag">🎬 经典台词</span>
+                <span class="tag">📖 深度书评</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content -->
+        <main>
+            <section class="featured-section">
+                <div class="section-title">
+                    <span>精选推荐</span>
+                    <a href="#">查看更多 &rarr;</a>
+                </div>
+
+                <article class="article-card">
+                    <div class="card-img">
+                        <span class="card-category">古风</span>
+                        <!-- Using a random seed image for placeholder -->
+                        <img src="https://picsum.photos/seed/tragedy1/800/400" alt="凄美古风插画">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title"><a href="#">深宫旧梦：一曲琵琶断人肠</a></h2>
+                        <p class="card-excerpt">在那座金碧辉煌却冰冷彻骨的深宫之中，她用尽一生去等待一个不会回头的人。当红颜枯骨，只留下一曲未完的琵琶，诉说着那段被岁月掩埋的虐带美女往事。</p>
+                        <div class="card-meta">
+                            <span><i>📅</i> 2023-10-24</span>
+                            <span><i>👁️</i> 12,405 阅读</span>
+                            <span><i>❤️</i> 3,892 收藏</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-img">
+                        <span class="card-category">影视剧本</span>
+                        <img src="https://picsum.photos/seed/tragedy2/800/400" alt="电影剧照">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title"><a href="#">《倾城之恋》残卷解析：爱是场豪赌</a></h2>
+                        <p class="card-excerpt">白流苏与范柳原的爱情，是乱世中唯一的依靠，也是最大的虚无。本文深度解析剧中那些令人心碎的对话，探讨在生存压力下，女性角色的抉择与无奈。</p>
+                        <div class="card-meta">
+                            <span><i>📅</i> 2023-10-22</span>
+                            <span><i>👁️</i> 8,932 阅读</span>
+                            <span><i>💬</i> 452 评论</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-img">
+                        <span class="card-category">现代言情</span>
+                        <img src="https://picsum.photos/seed/tragedy3/800/400" alt="都市情感">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title"><a href="#">错爱：当深情遇见背叛</a></h2>
+                        <p class="card-excerpt">有些相遇是救赎，有些相遇是劫难。在这个快节奏的时代，我们是否还能相信那份刻骨铭心的“虐带美女”式爱情？真实案例改编，读来令人唏嘘。</p>
+                        <div class="card-meta">
+                            <span><i>📅</i> 2023-10-20</span>
+                            <span><i>👁️</i> 15,201 阅读</span>
+                            <span><i>❤️</i> 5,100 收藏</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="grid-section">
+                <div class="grid-card">
+                    <div class="grid-icon">📜</div>
+                    <h3>古风长篇</h3>
+                    <p>穿越千年的爱恨纠葛，体验极致的虐恋情深。</p>
+                    <a href="#" class="btn-link">开始阅读</a>
+                </div>
+                <div class="grid-card">
+                    <div class="grid-icon">🎭</div>
+                    <h3>影视剪辑</h3>
+                    <p>精选电影电视剧中那些让人泪流满面的名场面。</p>
+                    <a href="#" class="btn-link">观看合集</a>
+                </div>
+                <div class="grid-card">
+                    <div class="grid-icon">📝</div>
+                    <h3>情感专栏</h3>
+                    <p>心理专家解读“虐带美女”心理，治愈与反思。</p>
+                    <a href="#" class="btn-link">阅读文章</a>
+                </div>
+                <div class="grid-card">
+                    <div class="grid-icon">🎧</div>
+                    <h3>伤感音乐</h3>
+                    <p>搭配凄美故事，沉浸式视听体验。</p>
+                    <a href="#" class="btn-link">播放歌单</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门榜单</h3>
+                <ul class="rank-list">
+                    <li><span class="rank-num">1</span><a href="#">红颜劫：乱世倾国</a></li>
+                    <li><span class="rank-num">2</span><a href="#">此生不复相见</a></li>
+                    <li><span class="rank-num">3</span><a href="#">冷宫里的眼泪</a></li>
+                    <li><span class="rank-num">4</span><a href="#">错把陈醋当墨</a></li>
+                    <li><span class="rank-num">5</span><a href="#">爱上不该爱的人</a></li>
+                    <li><span class="rank-num">6</span><a href="#">镜花水月一场空</a></li>
+                    <li><span class="rank-num">7</span><a href="#">此情可待成追忆</a></li>
+                    <li><span class="rank-num">8</span><a href="#">最后的温柔</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门标签</h3>
+                <div class="tag-cloud">
+                    <a href="#">虐恋情深</a>
+                    <a href="#">古言</a>
+                    <a href="#">BE美学</a>
+                    <a href="#">悲剧</a>
+                    <a href="#">宫斗</a>
+                    <a href="#">破镜重圆</a>
+                    <a href="#">追妻火葬场</a>
+                    <a href="#">绝症</a>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">情感语录</h3>
+                <p style="font-style: italic; color: #666; font-size: 14px; line-height: 1.8;">
+                    “我们都是在黑暗中行走的人，偶尔有人提着灯走过，我们便以为那是光，结果走过去才发现，那不过是一团火，烧得你遍体鳞伤。”
+                </p>
+                <p style="text-align: right; font-size: 12px; color: #999; margin-top: 10px;">—— 佚名</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>内容分类</h4>
+                <ul>
+                    <li><a href="#">古风虐文</a></li>
+                    <li><a href="#">现代悲剧</a></li>
+                    <li><a href="#">影视剧本</a></li>
+                    <li><a href="#">情感心理</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="#">文学城</a></li>
+                    <li><a href="#">豆瓣阅读</a></li>
+                    <li><a href="#">知乎情感</a></li>
+                    <li><a href="#">哔哩哔哩</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 虐带美女阅读平台. All Rights Reserved. 仅供文学交流与欣赏.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
