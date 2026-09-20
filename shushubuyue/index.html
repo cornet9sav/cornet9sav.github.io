@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="叔叔不约匿名聊天软件网页提供安全、匿名的社交交流环境。支持多端登录、加密通讯、兴趣匹配及隐私保护，帮助用户在保护隐私的前提下拓展社交圈。">
+    <meta name="keywords" content="叔叔不约,匿名聊天软件,隐私社交,在线聊天,匿名交友,安全社交">
+    <title>叔叔不约匿名聊天软件网页 - 安全隐私的匿名社交平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --secondary-bg: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        /* Security Section */
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 5px solid var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .security-card {
+            background: var(--secondary-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .security-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--accent-color);
+        }
+
+        .security-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .security-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* App Showcase */
+        .app-showcase {
+            background: #f8f9fa;
+            padding: 60px 0;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+        }
+
+        .app-flex {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .app-text {
+            flex: 1;
+        }
+
+        .app-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .app-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .app-visual {
+            flex: 1;
+            background: #fff;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .app-visual img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--secondary-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .download-steps li {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: var(--text-light);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .download-steps li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e1e1e1;
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 5px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .app-flex {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>Uncle</span>Chat
+            </a>
+            <nav class="nav-links">
+                <a href="#features">功能特色</a>
+                <a href="#security">安全隐私</a>
+                <a href="#download">下载安装</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册账号</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>匿名社交新选择</h1>
+                <p>叔叔不约匿名聊天软件网页，为您打造纯净、私密、无压力的线上交流空间。在这里，您可以卸下伪装，自由表达，寻找志同道合的伙伴。</p>
+                
+                <div class="hero-features">
+                    <div class="feature-item">🔒 端到端加密</div>
+                    <div class="feature-item">🛡️ 隐私保护</div>
+                    <div class="feature-item">🎯 兴趣匹配</div>
+                    <div class="feature-item">📱 多端同步</div>
+                </div>
+
+                <button class="btn btn-primary" onclick="window.location.href='#download'">立即开始聊天</button>
+            </div>
+        </section>
+
+        <div class="container main-layout">
+            <!-- Left Content -->
+            <div class="content-area">
+                <!-- Security Section -->
+                <section id="security">
+                    <h2 class="section-title">安全隐私保障</h2>
+                    <p style="margin-bottom: 30px; color: var(--text-light);">我们深知隐私对于匿名社交的重要性。本软件采用国际领先的加密技术，确保您的聊天记录和个人信息不被泄露。</p>
+                    
+                    <div class="security-grid">
+                        <div class="security-card">
+                            <div class="icon-box">🛡️</div>
+                            <h3>身份伪装</h3>
+                            <p>支持设置虚拟昵称、头像，隐藏真实身份，建立安全社交屏障。</p>
+                        </div>
+                        <div class="security-card">
+                            <div class="icon-box">🔐</div>
+                            <h3>数据加密</h3>
+                            <p>所有传输数据均经过高强度加密处理，防止被第三方窃取。</p>
+                        </div>
+                        <div class="security-card">
+                            <div class="icon-box">🚫</div>
+                            <h3>精准屏蔽</h3>
+                            <p>提供黑名单、关键词过滤功能，让您自主掌控社交环境。</p>
+                        </div>
+                        <div class="security-card">
+                            <div class="icon-box">📜</div>
+                            <h3>本地存储</h3>
+                            <p>敏感信息支持本地加密存储，不上传云端，彻底放心。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section id="features">
+                    <h2 class="section-title">核心功能介绍</h2>
+                    <div class="app-showcase">
+                        <div class="app-flex">
+                            <div class="app-text">
+                                <h3>兴趣圈子聚合</h3>
+                                <p>无论您喜欢二次元、户外运动、还是深夜电台，我们都有专属的兴趣圈子。在圈子内，您无需担心被误解，可以纯粹地交流爱好。</p>
+                                <h3>智能消息推送</h3>
+                                <p>告别无效打扰。系统根据您的社交偏好，智能过滤不感兴趣的消息，只将高质量内容推送到您的手机上。</p>
+                                <button class="btn btn-outline">了解更多功能</button>
+                            </div>
+                            <div class="app-visual">
+                                <!-- Placeholder for App Interface -->
+                                <img src="https://picsum.photos/seed/chatapp/600/400" alt="App Interface Preview">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h3>快速下载</h3>
+                    <ul class="download-steps">
+                        <li>访问官方网站或应用商店</li>
+                        <li>搜索“叔叔不约”并下载安装包</li>
+                        <li>注册/登录账号并完善兴趣标签</li>
+                        <li>开启匿名模式，开始聊天</li>
+                    </ul>
+                    <div style="margin-top: 20px; text-align: center;">
+                        <button class="btn btn-primary" style="width: 100%;">安卓下载</button>
+                        <button class="btn btn-outline" style="width: 100%; margin-top: 10px;">iOS 下载</button>
+                    </div>
+                </div>
+
+                <div class="sidebar-card" id="faq">
+                    <h3>常见问题 (FAQ)</h3>
+                    <div class="faq-item active">
+                        <span class="faq-question">如何确保匿名性？</span>
+                        <p class="faq-answer">您可以选择使用虚拟昵称和随机头像，系统不会收集您的真实姓名和手机号进行实名认证。</p>
+                    </div>
+                    <div class="faq-item">
+                        <span class="faq-question">聊天记录会被保存吗？</span>
+                        <p class="faq-answer">我们支持本地备份功能，聊天记录默认仅保存在您的设备上，服务器端不存储明文记录。</p>
+                    </div>
+                    <div class="faq-item">
+                        <span class="faq-question">如何举报违规用户？</span>
+                        <p class="faq-answer">在聊天界面点击用户头像，选择“举报”选项，系统将自动审核并处理违规账号。</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #bdc3c7; font-size: 14px; line-height: 1.8;">
+                        叔叔不约致力于为用户提供一个真实、友好的匿名社交环境。我们反对任何形式的骚扰和不良信息传播，共同维护网络文明。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#">安卓版下载</a></li>
+                        <li><a href="#">iOS 版下载</a></li>
+                        <li><a href="#">网页版入口</a></li>
+                        <li><a href="#">隐私协议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">账号安全</a></li>
+                        <li><a href="#">功能介绍</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">社区规范</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 叔叔不约匿名聊天软件网页 版权所有 | 仅供技术展示与交流使用
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = event.target.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
